@@ -26,8 +26,8 @@ Page({
 
   // 获取初始化数据
   async getInitData () {
-    let placeholderData = await request('search/default')
-    let hotListData = await request('search/hot/detail')
+    let placeholderData = await request('/search/default')
+    let hotListData = await request('/search/hot/detail')
     this.setData({
       placeholderContent: placeholderData.data.showKeyword,
       hotList: hotListData.data

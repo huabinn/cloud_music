@@ -24,7 +24,7 @@ export default  (url, data={}, method='GET') => {
   return new Promise((resolve, reject) => {
     // 1. new Promise初始化promise实例的状态为pending
     wx.request({
-      url: config.mobileHost + url,
+      url: config.host + url,
       data,
       method,
       header: {

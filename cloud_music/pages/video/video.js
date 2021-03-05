@@ -25,7 +25,7 @@ Page({
 
   // 获取导航数据
   async getVideoGroupListData () {
-    let videoGroupListData = await request('video/group/list')
+    let videoGroupListData = await request('/video/group/list')
     this.setData({
       videoGroupList: videoGroupListData.data.slice(0, 14),
       navId: videoGroupListData.data[0].id
@@ -35,7 +35,7 @@ Page({
   },
   // 获取视频列表数据
   async getVideoList (navId) {
-    let videoListData = await request('video/group', {id: navId})
+    let videoListData = await request('/video/group', {id: navId})
     // 关闭消息提示框
     wx.hideLoading();
     let index = 0
@@ -129,7 +129,7 @@ Page({
   // 上拉触底的回调
   async handleToLower () {
     console.log('到底了');
-    let videoListData = await request('video/group', {id: this.data.navId})
+    let videoListData = await request('/video/group', {id: this.data.navId})
     console.log(videoListData);
     let {videoList} = this.data
     videoList.push(...videoListData.datas)

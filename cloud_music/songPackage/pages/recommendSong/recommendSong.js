@@ -1,6 +1,6 @@
 // pages/recommendSong/recommendSong.js
 import PubSub from 'pubsub-js'
-import request from '../../utils/request'
+import request from '../../../utils/request'
 Page({
 
   /**
@@ -44,7 +44,6 @@ Page({
         index -= 1
       } else {                   //下一首
         index += 1
-        console.log('播放下一首');
       }
       index = (index + recommendList.length) % recommendList.length
       // 更新对应的下标
@@ -59,7 +58,7 @@ Page({
 
   // 获取用户每日推荐数据
   async getRecommendList () {
-    let recommendListData = await request('recommend/songs')
+    let recommendListData = await request('/recommend/songs')
     this.setData({
       recommendList: recommendListData.recommend
     })
@@ -72,7 +71,7 @@ Page({
       index
     })
     wx.navigateTo({
-      url: '/pages/songDetail/songDetail?musicId=' + song.id,
+      url: '/songPackage/pages/songDetail/songDetail?musicId=' + song.id,
     })
   },
 

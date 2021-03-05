@@ -1,7 +1,7 @@
 // pages/songDetail/songDetail.js
 import PubSub from 'pubsub-js'
 import moment from 'moment'
-import request from '../../utils/request'
+import request from '../../../utils/request'
 const appInstance = getApp()
 Page({
 
@@ -92,7 +92,7 @@ Page({
 
   // 获取音乐详情功能回调
   async getMusicInfo (musicId) {
-    let songData = await request('song/detail', {ids: musicId})
+    let songData = await request('/song/detail', {ids: musicId})
     let durationTime = moment(songData.songs[0].dt).format('mm:ss')
     this.setData({
       song: songData.songs[0],
@@ -120,7 +120,7 @@ Page({
     
     if (isPlay) {      //播放音乐
       if (!musicLink) {
-        let musicLinkData = await request('song/url', {id: musicId})
+        let musicLinkData = await request('/song/url', {id: musicId})
         let musicLink = musicLinkData.data[0].url
         this.setData({
           musicLink

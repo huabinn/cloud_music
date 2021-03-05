@@ -1,5 +1,8 @@
 /* pages/songDetail/songDetail.wxss */
-@import "/static/iconfont/iconfont.wxss";
+/*
+  独立分包使用
+  @import "/static/iconfont/iconfont.wxss"; 
+*/
 page {
   height: 100%;
 }

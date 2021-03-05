@@ -65,10 +65,10 @@ app.use('/getOpenId', async (req, res, next) => {
      openId
    }
    // 对用户的数据进行加密，生成token返回给客户端
-  let token = jwt.sign(person, 'atguigu');
+  let token = jwt.sign(person, 'binn');
   console.log(token);
   // 验证身份，反编译token
-  let result2 = jwt.verify(token, 'atguigu');
+  let result2 = jwt.verify(token, 'binn');
   console.log(result2);
   res.send(token);
 });

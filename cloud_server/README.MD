@@ -3,5 +3,6 @@
 - 具体的接口文档在项目资源的接口文档中 https://binaryify.github.io/NeteaseCloudMusicApi/#/
 
 ## 2.
-1). 进入server
-2). 执行命令: npm start
+    1). 进入server
+    2). npm install
+    3). 执行命令: npm start

@@ -4,9 +4,7 @@
     "pages/video/video",
     "pages/personal/personal",
     "pages/login/login",
-    "pages/search/search",
-    "pages/recommendSong/recommendSong",
-    "pages/songDetail/songDetail"
+    "pages/search/search"
   ],
   "window": {
     "navigationBarBackgroundColor": "#d43c33",
@@ -45,5 +43,19 @@
   },
   "requiredBackgroundModes": [
     "audio"
-  ]
+  ],
+  "subpackages":[
+    {
+      "root": "songPackage",
+      "pages": [
+        "pages/recommendSong/recommendSong",
+        "pages/songDetail/songDetail"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "packages": ["songPackage"]
+    }
+  }
 }
